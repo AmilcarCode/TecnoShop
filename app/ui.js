@@ -16,15 +16,16 @@ function renderProducts(list, productslist) {
   });
 }
 
-const searchInput = document.getElementById('search');
-if (searchInput) { // Solo si existe
-    searchInput.addEventListener('input', e => {
-        const query = e.target.value.toLowerCase();
-        const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-        renderProducts(filtered);
-    });
+function searchProducts() {
+  const searchInput = document.getElementById('search');
+  if (searchInput) { // Solo si existe
+      searchInput.addEventListener('input', e => {
+          const query = e.target.value.toLowerCase();
+          const filtered = products.filter(p => p.name.toLowerCase().includes(query));
+          renderProducts(filtered, 'product-list');
+      });
+  }
 }
-
 
 // Ejecutar solo si estamos en outlet.html
 if (document.getElementById('outlet-product-list')) {
@@ -41,6 +42,7 @@ if (document.getElementById('checkout-list')) {
 
 document.addEventListener('DOMContentLoaded', function() {
   renderProducts(products, 'product-list');
+  searchProducts();
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.getElementById('main-nav');
   const dropdowns = document.querySelectorAll('.dropdown');

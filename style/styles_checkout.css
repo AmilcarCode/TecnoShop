@@ -1,0 +1,276 @@
+:root {
+  /* Colores */
+  --primary-bg: #0e0e0e;
+  --secondary-bg: #1a1a1a;
+  --card-bg: #1f1f1f;
+  --input-bg: #2a2a2a;
+  --primary-color: #0ff;
+  --primary-hover: #00cccc;
+  --text-color: #fff;
+  
+  /* Efectos */
+  --shadow-neon: 0 0 10px rgba(0, 255, 255, 0.2);
+  
+  /* Bordes */
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Z-index */
+  --z-index-base: 1;
+  --z-index-dropdown: 10;
+  --z-index-buttons: 20;
+  --z-index-map: 5;
+}
+
+
+
+/* Estructura principal */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+}
+
+
+/*Resumen Compra*/
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(40vh - 120px); 
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main h2 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: var(--shadow-neon);
+}
+
+#checkout-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 1rem 0;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-neon);
+}
+
+.checkout-summary {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-neon);
+}
+
+.checkout-summary h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+
+
+/*Facturar button */
+.facturar {
+  position: relative;
+  z-index: 10; 
+  background: linear-gradient(135deg, #00ffff 0%, #0088ff 100%); /* Degradado cian/azul */
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif; 
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4); /* Sombra neón */
+  transition: all 0.3s ease;
+  overflow: hidden; /* Para el efecto de hover */
+}
+
+/* Efecto hover con brillo */
+.facturar:hover {
+  background: linear-gradient(135deg, #00ffff 20%, #0088ff 80%);
+  transform: translateY(-2px); /* Levanta el botón */
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Efecto "click" */
+.facturar:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.6);
+}
+
+/* Efecto de "pulso" al cargar */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+}
+
+.facturar:focus {
+  animation: pulse 1.5s infinite; /* Solo se activa al hacer focus */
+}
+
+
+
+
+
+/* Estilos para la sección de contacto */
+.contact-section {
+  background: #1a1a1a;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 30px;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.contact-info h3 {
+  color: #0ff;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.contact-form button {
+  background: #0ff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background: #00cccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  
+  .header-top {
+    flex-direction: column;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .search-bar {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .map-container iframe {
+    width: 95%;
+    height: 300px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main {
+    min-height: calc(100vh - 100px);
+    padding: 1rem;
+  }
+  
+  #checkout-list, 
+  .checkout-summary {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .main h2 {
+    font-size: 1.5rem;
+  }
+  
+  .checkout-summary h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+/* Estilo del contenedor de regresar a index */
+.return {
+  display: flex;
+  justify-content: center; /* Centra el retunr horizontalmente */
+}
+
+/* Estilo del enlace para que sea clickeable en todo el texto */
+.return-link {
+  text-decoration: none;  /* Elimina el subrayado del enlace */
+  color: inherit;         /* Hereda el color del texto (para que no se vea azul) */
+  display: inline-block;  /* Permite que el enlace ocupe todo el ancho del texto */
+}

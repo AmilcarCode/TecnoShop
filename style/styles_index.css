@@ -1,0 +1,476 @@
+:root {
+  /* Colores */
+  --primary-bg: #0e0e0e;
+  --secondary-bg: #1a1a1a;
+  --card-bg: #1f1f1f;
+  --input-bg: #2a2a2a;
+  --primary-color: #0ff;
+  --primary-hover: #00cccc;
+  --text-color: #fff;
+  
+  /* Efectos */
+  --shadow-neon: 0 0 10px rgba(0, 255, 255, 0.2);
+  
+  /* Bordes */
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Z-index */
+  --z-index-base: 1;
+  --z-index-dropdown: 10;
+  --z-index-buttons: 20;
+  --z-index-map: 5;
+}
+
+
+
+/* Estructura principal */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+}
+
+
+/* Estilo del contenedor del logo (si necesitas ajustes) */
+.logo {
+  display: flex;
+  justify-content: center; /* Centra el logo horizontalmente */
+}
+
+/* Estilo del enlace para que sea clickeable en todo el texto */
+.logo-link {
+  text-decoration: none;  /* Elimina el subrayado del enlace */
+  color: inherit;         /* Hereda el color del texto (para que no se vea azul) */
+  display: inline-block;  /* Permite que el enlace ocupe todo el ancho del texto */
+}
+
+
+
+
+
+/* Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1000; /* Asegura que el contenedor padre tenga un z-index */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1f1f1f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Mayor que el del padre para que aparezca encima */
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #0ff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Navegación centrada */
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+
+
+/* Header centrado */
+header {
+  display: flex;
+  align-items: center;
+  background: var(--secondary-bg);
+  padding: 1rem 5rem;
+  position: relative; /* Para posicionamiento absoluto del carrito si es necesario */
+}
+
+/* Contenedor para logo y navegación */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+
+/* Estilos para el carrito (izquierda) */
+.cart {
+  position: absolute;
+  left: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  z-index: var(--z-index-buttons);
+}
+
+/* Contador del carrito */
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--primary-color);
+  color: #000;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+
+/* Logo centrado */
+.logo {
+  margin: 0 auto; /* Centra el logo */
+}
+
+/* Navegación centrada */
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute; /* Para superponer sobre el espacio del logo */
+  left: 0;
+}
+
+
+
+
+
+
+/* Barra de búsqueda centrada */
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 5rem auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background: var(--input-bg);
+  color: var(--text-color);
+}
+
+
+
+/* Productos */
+.products {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: var(--z-index-base);
+}
+
+.product {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-neon);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 350px; 
+  justify-content: space-between; 
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;          /* Ocupa todo el ancho del contenedor */
+  height: 180px;         /* Altura fija para uniformidad */
+  object-fit: contain;   /* Mantiene la proporción sin distorsión */
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  background: var(--input-bg); /* Fondo para imágenes con transparencia */
+}
+
+
+
+/*Product button */
+.product button {
+  position: relative;
+  z-index: 10; /* Asegura que esté sobre otros elementos */
+  background: linear-gradient(135deg, #00ffff 0%, #0088ff 100%); /* Degradado cian/azul */
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4); /* Sombra neón */
+  transition: all 0.3s ease;
+  overflow: hidden; /* Para el efecto de hover */
+}
+
+/* Efecto hover con brillo */
+.product button:hover {
+  background: linear-gradient(135deg, #00ffff 20%, #0088ff 80%);
+  transform: translateY(-2px); /* Levanta el botón */
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+}
+
+/* Efecto "click" */
+.product button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.6);
+}
+
+/* Efecto de "pulso" al cargar */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+}
+
+.product button:focus {
+  animation: pulse 1.5s infinite; /* Solo se activa al hacer focus (opcional) */
+}
+
+
+
+/* Mapa */
+.map-container {
+  position: relative;
+  z-index: var(--z-index-map);
+  width: 100%;
+  margin-top: 50px;
+  padding: 20px 0;
+  background: var(--secondary-bg);
+  text-align: center;
+}
+
+.map-container iframe {
+  position: relative;
+  z-index: var(--z-index-map);
+  width: 90%;
+  max-width: 800px;
+  height: 400px;
+  border: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-neon);
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+/* Estilos para la sección de contacto */
+.contact-section {
+  background: #1a1a1a;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 30px;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.contact-info h3 {
+  color: #0ff;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.contact-form button {
+  background: #0ff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background: #00cccc;
+}
+
+ 
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  
+  .header-top {
+    flex-direction: column;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .search-bar {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .map-container iframe {
+    width: 95%;
+    height: 300px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+
+
+
+
+/* Menú tres lineas para móviles */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Estilos para móviles */
+@media (max-width: 1900px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--secondary-bg);
+    padding: 1rem 0;
+    z-index: var(--z-index-dropdown);
+  }
+
+  nav.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a, .dropdown > a {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .header-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin: 0;
+    padding-left: 50px; /* Espacio para el carrito */
+  }
+}

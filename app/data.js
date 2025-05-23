@@ -1,14 +1,14 @@
 // This file contains the data for the products in the store.
 const laptops = [
-  { id: 1, name: 'Laptop Gamer RTX 4060', price: 1299, image: '/image/lapto_gamer_4060.jpg' }
+  { id: 1, name: 'Laptop Gamer RTX 4060', price: 1299, image: 'TecnoShop/image/lapto_gamer_4060.jpg' }
 ];
 
 const mouses = [
-  { id: 2, name: 'Mouse RGB', price: 49, image: '/image/mouse_gamer.jpg' }
+  { id: 2, name: 'Mouse RGB', price: 49, image: 'TecnoShop/image/mouse_gamer.jpg' }
 ];
 
 const monitores = [
-  { id: 3, name: 'Monitor UltraWide 34"', price: 499, image: '/image/monitor_ultrawide.jpg' },
+  { id: 3, name: 'Monitor UltraWide 34"', price: 499, image: 'TecnoShop/image/monitor_ultrawide.jpg' },
   { id: 6, name: 'Monitor Curvo 27"', price: 299, image: '/image/monitor_ultrawide.jpg' },
   { id: 7, name: 'Monitor 4K 32"', price: 599, image: '/image/monitor_ultrawide.jpg' }
 ];

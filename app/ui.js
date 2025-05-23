@@ -22,7 +22,7 @@ function searchProducts() {
       searchInput.addEventListener('input', e => {
           const query = e.target.value.toLowerCase();
           const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-          renderProducts(filtered);
+          renderProducts(filtered, 'product-list');
       });
   }
 }

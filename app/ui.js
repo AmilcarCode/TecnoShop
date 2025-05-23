@@ -22,7 +22,7 @@ function searchProducts() {
       searchInput.addEventListener('input', e => {
           const query = e.target.value.toLowerCase();
           const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-          renderProducts(filtered, 'product-list');
+          renderProducts(filtered);
       });
   }
 }
@@ -31,6 +31,7 @@ function searchProducts() {
 if (document.getElementById('outlet-product-list')) {
     renderProducts(outlet_products, 'outlet-product-list');
 }
+
 
 // Verifica si estamos en checkout.html antes de ejecutar
 if (document.getElementById('checkout-list')) {

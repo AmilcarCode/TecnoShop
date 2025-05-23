@@ -16,14 +16,14 @@ function facturar() {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   if (cart.length === 0) {
     alert('Primero debe agregar productos al carrito');
-    window.location.href = '../index.html';
+    window.location.href = '../pages/index.html';
     return;
   }
   // Aquí continua el código para facturar
   // Por ejemplo, mostrar la factura o limpiar carrito
   alert('Factura generada. Gracias por su compra.');
   localStorage.removeItem('cart');
-  window.location.href = '../index.html';
+  window.location.href = '../pages/index.html';
 }
 
 

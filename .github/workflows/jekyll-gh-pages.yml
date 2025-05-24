@@ -32,7 +32,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Move pages to root
         run: |
-          mv pages/indes.html index.html
+          mv pages/index.html
           [ -f pages/_config.yml ] && mv pages/_config.yml . || echo "No _config.yml in pages"
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1

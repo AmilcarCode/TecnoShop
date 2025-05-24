@@ -28,10 +28,10 @@ const componentes = [
 ];
 
 const outlet_products = [
-  { id: generateId(), name: 'Laptop Gamer RTX 3060', price: 899, image: '../image/lapto_gamer_4060.jpg' },
-  { id: generateId(), name: 'Mouse Inalambrico', price: 29, image: '../image/mouse_gamer.jpg' },
-  { id: generateId(), name: 'Monitor 24"', price: 199, image: '../image/monitor_ultrawide.jpg' },
-  { id: generateId(), name: 'Teclado Inalambrico', price: 39, image: '../image/teclado_mecanico.jpg' },
+  { id: generateId(), name: 'Laptop Gamer RTX 3060', price: 899, image: '../image/lapto_gamer_4060.jpg', isOutlet: true },
+  { id: generateId(), name: 'Mouse Inalambrico', price: 29, image: '../image/mouse_gamer.jpg', isOutlet: true },
+  { id: generateId(), name: 'Monitor 24"', price: 199, image: '../image/monitor_ultrawide.jpg', isOutlet: true },
+  { id: generateId(), name: 'Teclado Inalambrico', price: 39, image: '../image/teclado_mecanico.jpg', isOutlet: true },
   
 ];
 

@@ -226,6 +226,35 @@ nav {
 }
 
 
+/* Estilo base para el contenedor de la imagen */
+.product-image-container {
+  position: relative; /* Necesario para posicionar el badge */
+  display: inline-block;
+}
+
+/* Badge de OUTLET */
+.outlet-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5722; /* Color naranja típico de outlet */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Opcional: Si quieres usar un icono en lugar de texto */
+.outlet-badge::before {
+  content: "🛍️"; /* Emoji o icono */
+  margin-right: 5px;
+}
+
+
+
 
 /*Product button */
 .product button {

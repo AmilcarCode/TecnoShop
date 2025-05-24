@@ -63,29 +63,38 @@ if (document.getElementById('checkout-list')) {
   
 
 document.addEventListener('DOMContentLoaded', function() {
-  renderProducts(products, 'product-list'); // Renderiza 10 productos
+  renderProducts(products, 'product-list'); // Render products
   searchProducts();
+  
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.getElementById('main-nav');
   const dropdowns = document.querySelectorAll('.dropdown');
-    
-  // Toggle del menú principal
-  menuToggle.addEventListener('click', function() {
-    mainNav.classList.toggle('active');
+  
+  // Only add event listeners if elements exist
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
     });
+  } else {
+    console.warn('Menu toggle or main nav element not found');
+  }
     
-  // Toggle para los dropdowns en móvil
-  dropdowns.forEach(dropdown => {
-  const link = dropdown.querySelector('a');
+  // Toggle for mobile dropdowns
+  if (dropdowns.length > 0) {
+    dropdowns.forEach(dropdown => {
+      const link = dropdown.querySelector('a');
       
-  link.addEventListener('click', function(e) {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      dropdown.classList.toggle('active');
-        }
-      });
+      if (link) {
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+          }
+        });
+      }
     });
-  });
+  }
+});
 
 
 

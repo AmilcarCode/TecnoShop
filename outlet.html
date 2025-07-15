@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoShop - Outlet</title>
+    <link rel="stylesheet" href="./style/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </a>
+            
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1>Tecno<span class="highlight">Shop</span></h1>
+                </a>
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="main-nav">
+                <a href="index.html">Home</a>               
+                <a href="outlet.html">Outlet</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="outlet-hero">
+            <div class="outlet-hero-content">
+                <h2>OUTLET DEALS</h2>
+                <p>Save big on open-box and refurbished tech</p>
+            </div>
+        </section>
+        
+        
+        
+        <section class="outlet-description">
+            <div class="outlet-info">
+                <h3>What is Outlet?</h3>
+                <p>Our outlet section features open-box, refurbished, and previous-generation products at significant discounts. 
+                All outlet items come with our 90-day warranty and have been thoroughly tested for quality assurance.</p>
+                
+                <div class="outlet-badges">
+                    <div class="outlet-badge-item">
+                        <span class="badge open-box">Open Box</span>
+                        <p>Returned items in perfect condition</p>
+                    </div>
+                    <div class="outlet-badge-item">
+                        <span class="badge refurbished">Refurbished</span>
+                        <p>Restored to like-new condition</p>
+                    </div>
+                    <div class="outlet-badge-item">
+                        <span class="badge previous-gen">Previous Gen</span>
+                        <p>Older model products at reduced prices</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="outlet-products" class="product-section">
+            <h2>Outlet Products</h2>
+            <div id="outlet-product-list" class="products"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Tecno<span class="highlight">Shop</span></h3>
+                <p>Your one-stop shop for all tech needs</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#featured-products">Products</a></li>
+                    <li><a href="outlet.html">Outlet</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe for updates and offers</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit" class="cta-button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 TeShop. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: <span id="cart-total">$0.00</span></h3>
+            </div>
+            <button id="checkout-btn" class="cta-button">Checkout</button>
+            <button id="clear-cart-btn" class="secondary-button">Clear Cart</button>
+        </div>
+    </div>
+    
+    <script src="./app/data.js"></script>
+    <script src="./app/ui.js"></script>
+    <script src="./app/cart.js"></script>
+    <script src="./app/main.js"></script>
+</body>
+</html>
